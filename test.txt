@@ -1,0 +1,129 @@
+Cheat Sheet
+
+sub = replace first String
+gsub = replace String
+
+#######  returned.gsub!('--','-') replaces all occurences of -- with -
+#######  https://www.dotnetperls.com/sub-ruby
+
+sort = sorts int arrays from greatest to least, will do chars in alphabetical order
+
+#######
+
+reverse = reverses the array (duh)
+
+#######
+
+to_i = to int
+to_s = to String
+to_f = to float
+to_a = to []
+123.digits = [1,2,3]
+str.chars = to array of chars
+(x,y).to_a will create an array from the range
+
+x = "aString"
+x.each_char do |char|
+  holder = holder + char
+  puts holder
+end
+
+x.times do |i|
+    something(i+1)
+end
+
+arr = [1,2,3,4]
+empty = []
+(arr.first,arr.last).each do |num|
+  if !arr.include?(num)
+    empty.push(num)
+  end
+end
+
+.include? = checks if the string/ contains the substring/value, is case sensitive.
+
+my_string = "abcdefg"
+if my_string.include? "cde"
+   puts "String includes 'cde'"
+end
+
+def palindrome?(string)
+  i = 0
+  while i < string.length
+    if string[i] != string[(string.length - 1) - i]
+      return false
+    end
+
+    i += 1
+  end
+
+  return true
+
+['Cat', 'Dog', 'Bird'].include? 'Dog'
+=> true
+
+arr.shift - Returns the first element of arr and removes it (shifting all other elements down by one). Returns nil if the array is empty.
+arr.pop - takes it off the end
+.push - adds to end
+unshift - adds to front
+
+#######
+
+arrayExample[0] = first element
+
+> str[0,4] # first four characters
+"Hell"
+> str[6,3] # 3 characters starting from index 6 ( 0-indexing )
+"Wor"
+> str[-1, 1] # 1 character starting from the END of string
+"!"
+
+x = Array.new(3){[]} - Creates 2D array [[],[],[]]
+
+###### -- Sorts
+
+class Array
+  def quicksort
+    return [] if empty?
+
+    pivot = delete_at(rand(size))
+    left, right = partition(&pivot.method(:>))
+
+    return *left.quicksort, pivot, *right.quicksort
+  end
+end
+
+
+
+#######
+
+.split("charToSplitOn")
+exampleArray = exampleString.split(" ") = creates an array from a string, splitting on (" ")
+
+######
+
+.join("charToJoinOn")
+exampleString = exampleArray.join(" ")
+
+######
+
+end
+
+
+Until Ruby 1.8, strings are only collections of bytes. Starting 1.9, strings have encoding information along with the bytes
+
+######
+
+StringObject.size returns the length of the String
+StringObject.bytesize returns the bytesize of the String
+StringObject.force_encoding(Encoding::ENCODINGNAME) forces an encoding on the string
+
+######
+
+
+######
+
+12.is_a? Numeric
+
+######
+
